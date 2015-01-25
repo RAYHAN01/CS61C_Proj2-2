@@ -1,0 +1,24 @@
+1. Run your code on a Sliding Puzzle of size 5x2 on clusters with 6 slaves and 12 slaves and on a Sliding Puzzle of size 4x3 on clusters with 12 slaves. How long does each take?
+	2x5, 12slaves, 00:01:15
+	2x5,  6slaves, 00:01:44
+	4x3, 12slaves, 01:44:03
+
+2. What was the mean processing rate (in MB/s) of your code for 6 and 12 instances? You can approximate the total data size to be (output size of your file)
+	12 instances:
+	4x3: 0.51664 MB/s
+	2x5: 0.27082 MB/s
+	 6 instances:
+	2x5: 0.22637 MB/S
+
+3. What was the speedup for 12 instances relative to 6 instances for the 5x2 board? What do you conclude about how well Spark parallelizes your work? Is this a case of strong scaling or weak scaling? Why or why not?
+	speedup from 6 to 12 instances: 19.63%
+	It is more of a strong scaling, since the growth of time (about 100 times) taken for the solution is almost proportional to the growth of data size (100+ times), whereas the efficiency boost from 6 core to 12 core (19.63%) is not much under comparison.
+
+
+4. What was the price per GB processed for each cluster size? (Recall that an extra-large instance costs $0.68 per hour, rounded up to the nearest hour.)
+	2x5 by 6slaves:  $176.32/GB (we count 1:44min as 1hr)
+	2x5 by 12slaves  $352.65/GB (we count 1:15min as 1hr)
+	4x3 by 12slaves: $  5.18/GB (we count  1:44hr as 2hr)
+
+5. How many dollars in EC2 credits did you use to complete this project?
+	$28560 credits
